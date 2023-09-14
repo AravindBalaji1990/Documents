@@ -1,0 +1,57 @@
+CSS Selectors:
+
+# -> represensts the id attribute of the element
+. -> represents the class attribute of the element
+> -> step by step navigation of the element
+[] -> this represents the attribute to be enclosed (any attributes)
+
+How to construct your css selector:
+tagname[attribute= value]
+tagname[attribute=value]>tagname
+tagname[attribute=value]>tagname[attribute=value]
+tagname>tagname[attribute=values][attribute=value]
+
+
+Example Google search text :
+
+#APjFqb
+textarea[id=APjFqb]
+textarea#APjFqb
+.a4bIc>textarea
+.a4bIc>textarea[id='APjFqb']
+.a4bIc>textarea#APjFqb
+div[class=a4bIc]>textarea#APjFqb
+
+
+Following sibling:
++ -> immediate bottom element will be higlighted
+
+div[class=a4bIc]>div+textarea
+div[class=a4bIc]>style+div+textarea
+
+incase if we need to identify element as a long tree
+Ex: tagname>tagname1>tagname2>tagname3>tagname4
+
+space -> one space bar 
+form[role='search']>div textarea[name='q']
+
+based on the index:
+div.RNNXgb>div>div:nth-child(1)
+div.RNNXgb>div>div:nth-child(2)
+div.RNNXgb>div>div:nth-child(3)
+
+use of *,^,$:
+* -> contains a attributes value
+input[value*=gle] -> value contains
+
+^ -> it checks the attributes value starts with
+input[value^=Google] -> value starts with
+
+$ -> it checks the attributes value ends with
+input[value$=Search] -> value ends with
+
+two attribute AND statement:
+center>input[type='submit'][name='btnI']
+center>input[type='submit'][name='btnI'][data-ved$=CBI]
+
+

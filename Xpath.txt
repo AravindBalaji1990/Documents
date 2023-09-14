@@ -1,0 +1,61 @@
+Xpath :
+Type of locator -> basically uses the dom structure to derive the elements
+
+Types--> 
+Relative xpath->//
+Absolute Xpath -> //
+Syntax:
+
+it starts with //
+to go step by step we have /
+we want to skip the steps in between -> //
+contains -> it can search for a text with in the attributes value
+
+Derivation of Absolute xpath ?
+1. its very long
+2. difficult to maintain
+3. readability goes missing
+//html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/textarea
+
+AND and OR both are available?
+//center/input[@type='submit' or @name='btnK' or contains(@data-ved,'CBE')]
+
+//center/input[@type='submit' and @name='btnK' and contains(@data-ved,'CBE')]
+
+skip the steps in between?
+//div[@jsname='RNNXgb']/div//textarea[@id='APjFqb']
+//div[@jsname='RNNXgb']//textarea[@id='APjFqb']
+
+parent , following,preceding and sibling?
+//div[@jsname='RNNXgb']/following::div -> what ever is below the xpath
+//div[@jsname='RNNXgb']/following-sibling::div 
+//div[@jsname='RNNXgb']/following-sibling::div[@jsname='UUbT9']
+//div[@jsname='RNNXgb']/following-sibling::div[@jsname='UUbT9']/preceding::div
+//div[@jsname='RNNXgb']/preceding::div -> what ever is above the xpath
+//div[@jsname='RNNXgb']/preceding-sibling::style
+
+
+contains?
+//a[contains(text(),' How Search works ')]
+//a[contains(@jsname,'RNNXgb')]
+
+
+Derivation of Relative Xpath?
+starts with //
+each steps are represented by /
+to skip the steps we have agian //
+
+Example:
+//tagname[@attribute = value] -> it will search for the tagname and the attibutes value
+//*[@attribute = value] -> it will saerch across all the tagnames
+
+
+//textarea[@name='q']
+
+//*[@name='q']
+
+//div/textarea[@name='q']
+//div[@jsname='gLFyf']/textarea[@name='q']
+
+
+
