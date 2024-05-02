@@ -1,0 +1,42 @@
+1. Create a new folder
+install cypress
+npm init
+npm install cypress --save-dev
+npm install -g yarn
+
+
+2. install cucumber -preprocessor plugin in the same folder path 
+npm install --save-dev cypress-cucumber-preprocessor
+npm i -D cypress cypress-cucumber-preprocessor
+
+
+3. In vs code install a extension named cucumber
+
+4. In the project path under the cypress/e2e folder
+create a Folder and file with extension as .feature with same names
+
+5. configuration path
+
+file -> Cypress.cinfig.js
+const cucumber = require('cypress-cucumber-preprocessor').default 
+
+e2e: {
+    specPattern: "cypress/e2e/*.feature",
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+      on('file:preprocessor', cucumber())
+    },
+  }
+
+6. configure package.json file
+stepDefinitions -> this should point to the folder name that you have created in step4
+"cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/GoogleFeature",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }  
